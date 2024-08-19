@@ -1,0 +1,131 @@
+/* CSS parte 1 */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #1C1C1C;
+}
+
+.navigate{
+    background-color: #FFF;
+    position: relative;
+    width: 500px;
+    height: 100px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navigate ul{
+    display: flex;
+    width: 400px;
+}
+
+.navigate ul li{
+    position: relative;
+    list-style: none;
+    width: 80px;
+    height: 80px;
+    z-index: 99;
+}
+
+.navigate ul li a{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    font-weight: bold;
+}
+
+.navigate .icon{
+    position: relative;
+    line-height: 90px;
+    font-size: 2.2rem;
+    text-align: center;
+    transition: 0.5s;
+    color: #1C1C1C;
+}
+
+.navigate ul li.active .icon{
+    transform: translateY(-50px);
+}
+
+/* CSS parte 2 */
+.navigate ul li a .title{
+    position: absolute;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #1C1C1C;
+    transition: 0.5s;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.navigate ul li.active a .title{
+    opacity: 1;
+    transform: translateY(10px);
+}
+
+.selector{
+    position: absolute;
+    top: -40%;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 6px solid #1C1C1C;
+    transition: 0.5s;
+    background-color: #A020F0;
+}
+
+.selector::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -23px;
+    width: 20px;
+    height: 20px;
+    border-top-right-radius: 30px;
+    box-shadow: 2px -7px 0 0 #1C1C1C;
+    background-color: transparent;
+}
+
+.selector::after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -23px;
+    width: 20px;
+    height: 20px;
+    border-top-left-radius: 30px;
+    box-shadow: 0px -9px 0 0 #1C1C1C;
+    background-color: transparent;
+}
+
+.navigate ul li:nth-child(1).active ~ .selector {
+    transform: translateX(calc(80px * 0));
+}
+.navigate ul li:nth-child(2).active ~ .selector {
+    transform: translateX(calc(80px * 1));
+}
+.navigate ul li:nth-child(3).active ~ .selector {
+    transform: translateX(calc(80px * 2));
+}
+.navigate ul li:nth-child(4).active ~ .selector {
+    transform: translateX(calc(80px * 3));
+}
+.navigate ul li:nth-child(5).active ~ .selector {
+    transform: translateX(calc(80px * 4));
+}
